@@ -13,7 +13,6 @@ class RectangleView: UIView {
   override func layoutSubviews() {
     let shapeLayer = CAShapeLayer()
     let frameSize = self.frame.size
-    let framePoint = self.frame.origin
     let rect = CGRect(x: 0, y: 0, width: frameSize.width, height: frameSize.height)
     
     shapeLayer.frame = rect
