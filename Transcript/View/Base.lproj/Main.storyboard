@@ -1,30 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gef-JP-Aqv">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Genrate Transcript-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Transcript" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eK4-sq-TsE">
+                                <rect key="frame" x="20" y="111" width="350" height="522.33333333333337"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="G5I-Ia-xps">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="349.33333333333331"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35t-XN-fg1" customClass="RectangleView" customModule="Transcript" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="293.33333333333331"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ywF-ai-h6a">
+                                                        <rect key="frame" x="99.999999999999986" y="98.333333333333314" width="152.66666666666669" height="99.666666666666657"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="IZf-OD-oPv"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="xTZ-xd-UIh"/>
+                                                        </constraints>
+                                                        <imageReference key="image" image="photo.badge.arrow.down" catalog="system" symbolScale="default" renderingMode="hierarchical">
+                                                            <hierarchicalColors>
+                                                                <color systemColor="systemGreenColor"/>
+                                                                <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </hierarchicalColors>
+                                                        </imageReference>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="regular"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="35t-XN-fg1" secondAttribute="height" multiplier="130:109" id="JTe-uh-PBP"/>
+                                                    <constraint firstItem="ywF-ai-h6a" firstAttribute="centerX" secondItem="35t-XN-fg1" secondAttribute="centerX" id="cfw-wt-Lsf"/>
+                                                    <constraint firstItem="ywF-ai-h6a" firstAttribute="centerY" secondItem="35t-XN-fg1" secondAttribute="centerY" id="lVq-d3-4dv"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="e85-RT-4lf" appends="YES" id="s9x-WI-EG8"/>
+                                                </connections>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Tap to uploaded your video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rj7-Uj-rHz">
+                                                <rect key="frame" x="0.0" y="323.33333333333331" width="350" height="26"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="228" translatesAutoresizingMaskIntoConstraints="NO" id="XPi-Vj-Q43">
+                                        <rect key="frame" x="0.0" y="399.33333333333331" width="350" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSP-BE-fZj">
+                                                <rect key="frame" x="0.0" y="4.0000000000000568" width="75.333333333333329" height="22.333333333333332"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6P-uM-1wg">
+                                                <rect key="frame" x="303.33333333333331" y="0.0" width="46.666666666666686" height="30"/>
+                                                <menu key="menu" id="3eh-zD-8Nj">
+                                                    <children>
+                                                        <command title="Item 1" id="D6o-MV-DxD"/>
+                                                        <command title="Item 2" id="yY8-1S-lMy"/>
+                                                    </children>
+                                                </menu>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1r-Sq-YCa">
+                                        <rect key="frame" x="0.0" y="479.33333333333337" width="350" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="3Ag-eP-lZr"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemBlueColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Genrate Transcript">
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="generateTranscriptAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e4o-Nb-Kmv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eK4-sq-TsE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="EBv-Zp-45U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eK4-sq-TsE" secondAttribute="trailing" constant="20" id="gBz-vl-sPI"/>
+                            <constraint firstItem="eK4-sq-TsE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="nbJ-cE-0jR"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Genrate Transcript" id="Xky-Y5-NXv"/>
+                    <connections>
+                        <outlet property="generateButton" destination="V1r-Sq-YCa" id="yeI-1z-fKY"/>
+                        <outlet property="uploadedLabel" destination="rj7-Uj-rHz" id="Xht-Fn-VIz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="e85-RT-4lf">
+                    <connections>
+                        <action selector="rectangleTapAction:" destination="BYZ-38-t0r" id="t1n-nF-5vt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1066.046511627907" y="3.218884120171674"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0IL-aW-YSs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gef-JP-Aqv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jM2-z6-caV">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9vw-Zc-6Mx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X0J-n1-hSz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="photo.badge.arrow.down" catalog="system" width="128" height="97"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

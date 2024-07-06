@@ -7,13 +7,25 @@
 
 import UIKit
 
+// File is successfully uploaded ✅
+
 class MainViewController: UIViewController {
 
-    override func viewDidLoad() {
+  @IBOutlet var uploadedLabel: UILabel!
+  @IBOutlet var generateButton: UIButton!
+  
+  
+  @IBAction func generateTranscriptAction(_ sender: UIButton) {
+    
+  }
+  
+  @IBAction func rectangleTapAction(_ sender: UITapGestureRecognizer) {
+    print("Tapped, Well Done Omar. El7")
+  }
+  
+  override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+//    items.menu?.children this will be edited to add the menu
     }
-
-
 }
 
