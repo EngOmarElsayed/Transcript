@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2688C5052C39366C0037769A /* PHPPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2688C5042C39366C0037769A /* PHPPickerDelegate.swift */; };
 		26A282A82C38464E002CC931 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A282A72C38464E002CC931 /* RectangleView.swift */; };
 		26B745022C3827BB0007E8A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B745012C3827BB0007E8A7 /* AppDelegate.swift */; };
 		26B745042C3827BB0007E8A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B745032C3827BB0007E8A7 /* SceneDelegate.swift */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2688C5042C39366C0037769A /* PHPPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPPickerDelegate.swift; sourceTree = "<group>"; };
+		2688C5102C39ABD70037769A /* FileManger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FileManger; path = Transcript/Pacakges/FileManger; sourceTree = SOURCE_ROOT; };
 		26A282A72C38464E002CC931 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		26B744FE2C3827BB0007E8A7 /* Transcript.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transcript.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26B745012C3827BB0007E8A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +42,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2688C5022C3936430037769A /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				2688C5042C39366C0037769A /* PHPPickerDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		2688C5112C39AC110037769A /* Pacakges */ = {
+			isa = PBXGroup;
+			children = (
+				2688C5102C39ABD70037769A /* FileManger */,
+			);
+			path = Pacakges;
+			sourceTree = "<group>";
+		};
 		26B744F52C3827BB0007E8A7 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +79,8 @@
 			children = (
 				26B745012C3827BB0007E8A7 /* AppDelegate.swift */,
 				26B745032C3827BB0007E8A7 /* SceneDelegate.swift */,
+				2688C5022C3936430037769A /* Delegates */,
+				2688C5112C39AC110037769A /* Pacakges */,
 				26B745152C3827ED0007E8A7 /* VC */,
 				26B745162C3827FB0007E8A7 /* View */,
 				26B7450A2C3827BD0007E8A7 /* Assets.xcassets */,
@@ -161,6 +182,7 @@
 				26B745022C3827BB0007E8A7 /* AppDelegate.swift in Sources */,
 				26A282A82C38464E002CC931 /* RectangleView.swift in Sources */,
 				26B745042C3827BB0007E8A7 /* SceneDelegate.swift in Sources */,
+				2688C5052C39366C0037769A /* PHPPickerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
