@@ -9,16 +9,14 @@ import Foundation
 import UniformTypeIdentifiers
 
 public final class FileStorage: FileStorageProtocol {
-  public let shared = FileStorage()
-  
   private var audioFileUrl: URL
   private var videoFileUrl: URL
   
   private let directoryUrl: URL
   private let fileManger = FileManager.default
   
-  private init() {
-    self.directoryUrl = fileManger.urls(for: .documentDirectory, in: .userDomainMask).first!
+  public init(for directory: FileManager.SearchPathDirectory, in domainMask: FileManager.SearchPathDomainMask) {
+    self.directoryUrl = fileManger.urls(for: directory, in: domainMask).first!
     self.audioFileUrl = directoryUrl.appendingPathComponent("audio", conformingTo: .mp3)
     self.videoFileUrl = directoryUrl.appendingPathComponent("video", conformingTo: .movie)
   }

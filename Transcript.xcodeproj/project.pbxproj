@@ -58,6 +58,23 @@
 			path = Pacakges;
 			sourceTree = "<group>";
 		};
+		2688C5122C39AEB40037769A /* MainScreenVC */ = {
+			isa = PBXGroup;
+			children = (
+				26B745052C3827BB0007E8A7 /* MainViewController.swift */,
+			);
+			path = MainScreenVC;
+			sourceTree = "<group>";
+		};
+		2688C5132C39AECD0037769A /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2688C5022C3936430037769A /* Delegates */,
+				2688C5122C39AEB40037769A /* MainScreenVC */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
 		26B744F52C3827BB0007E8A7 = {
 			isa = PBXGroup;
 			children = (
@@ -79,7 +96,6 @@
 			children = (
 				26B745012C3827BB0007E8A7 /* AppDelegate.swift */,
 				26B745032C3827BB0007E8A7 /* SceneDelegate.swift */,
-				2688C5022C3936430037769A /* Delegates */,
 				2688C5112C39AC110037769A /* Pacakges */,
 				26B745152C3827ED0007E8A7 /* VC */,
 				26B745162C3827FB0007E8A7 /* View */,
@@ -92,7 +108,7 @@
 		26B745152C3827ED0007E8A7 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				26B745052C3827BB0007E8A7 /* MainViewController.swift */,
+				2688C5132C39AECD0037769A /* MainScreen */,
 			);
 			path = VC;
 			sourceTree = "<group>";
