@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		266553842C3AA9F600BE90D7 /* AudioExtraction */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AudioExtraction; sourceTree = "<group>"; };
 		2688C5042C39366C0037769A /* PHPPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPPickerDelegate.swift; sourceTree = "<group>"; };
 		2688C5102C39ABD70037769A /* FileManger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FileManger; path = Transcript/Pacakges/FileManger; sourceTree = SOURCE_ROOT; };
 		26A282A72C38464E002CC931 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		2688C5112C39AC110037769A /* Pacakges */ = {
 			isa = PBXGroup;
 			children = (
+				266553842C3AA9F600BE90D7 /* AudioExtraction */,
 				2688C5102C39ABD70037769A /* FileManger */,
 			);
 			path = Pacakges;
