@@ -16,7 +16,11 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "AudioExtraction"),
+            name: "AudioExtraction",
+            resources: [
+              .process("Resources")
+            ]
+        ),
         .testTarget(
             name: "AudioExtractionTests",
             dependencies: ["AudioExtraction"]),

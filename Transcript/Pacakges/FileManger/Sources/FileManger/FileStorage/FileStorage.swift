@@ -17,7 +17,7 @@ public final class FileStorage: FileStorageProtocol {
   
   public init(for directory: FileManager.SearchPathDirectory, in domainMask: FileManager.SearchPathDomainMask) {
     self.directoryUrl = fileManger.urls(for: directory, in: domainMask).first!
-    self.audioFileUrl = directoryUrl.appendingPathComponent("audio", conformingTo: .mp3)
+    self.audioFileUrl = directoryUrl.appendingPathComponent("audio", conformingTo: .mpeg4Audio)
     self.videoFileUrl = directoryUrl.appendingPathComponent("video", conformingTo: .movie)
   }
 }

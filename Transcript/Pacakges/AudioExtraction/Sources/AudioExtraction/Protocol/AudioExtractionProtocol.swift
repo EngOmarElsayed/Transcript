@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol AudioExtractionProtocol {
-  func extractAudio(from fileUrl: URL, to outputUrl: URL) async
+public protocol AudioExtractionProtocol {
+  func extractAudio(from fileUrl: URL, to outputUrl: URL) async throws
 }
