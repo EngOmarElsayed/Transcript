@@ -30,6 +30,7 @@
 		26B7450A2C3827BD0007E8A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26B7450D2C3827BD0007E8A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26B7450F2C3827BE0007E8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26E099412C3FE3CD00BC16F3 /* AudioTranscript */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AudioTranscript; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		2688C5112C39AC110037769A /* Pacakges */ = {
 			isa = PBXGroup;
 			children = (
+				26E099412C3FE3CD00BC16F3 /* AudioTranscript */,
 				266553842C3AA9F600BE90D7 /* AudioExtraction */,
 				2688C5102C39ABD70037769A /* FileManger */,
 			);
@@ -355,6 +357,7 @@
 				DEVELOPMENT_TEAM = 9PYC9KWKRS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Transcript/Info.plist;
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You are using this feature to detect the speech in the video you choose and genrate a transcript";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -387,6 +390,7 @@
 				DEVELOPMENT_TEAM = 9PYC9KWKRS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Transcript/Info.plist;
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You are using this feature to detect the speech in the video you choose and genrate a transcript";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
