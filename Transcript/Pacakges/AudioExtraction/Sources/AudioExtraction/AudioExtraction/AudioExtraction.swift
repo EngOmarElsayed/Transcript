@@ -13,14 +13,14 @@ public struct AudioExtraction {
 
 //MARK: - AudioExtraction conforms to AudioExtractionProtocol
 extension AudioExtraction: AudioExtractionProtocol {
-  public static func extractAudio(from fileUrl: URL, to outputUrl: URL) async throws {
+  public func extractAudio(from fileUrl: URL, to outputUrl: URL) async throws {
     try await createAVAssetExportSession(for: outputUrl, from: fileUrl)
   }
 }
 
 //MARK: -  Private Methods
 extension AudioExtraction {
-  private static func createAVAssetExportSession(for outputUrl: URL, from videoUrl: URL) async throws {
+  private func createAVAssetExportSession(for outputUrl: URL, from videoUrl: URL) async throws {
     let avAsset = AVAsset(url: videoUrl)
     
     guard await checkCompatibility(for: avAsset) else { throw AudioExtractionErrors.fileNotCompatibility }
@@ -33,7 +33,7 @@ extension AudioExtraction {
     await avAssetExportSession.export()
   }
   
-  private static func checkCompatibility(for avAsset: AVAsset) async -> Bool {
+  private func checkCompatibility(for avAsset: AVAsset) async -> Bool {
     await AVAssetExportSession.compatibility(ofExportPreset: AVAssetExportPresetAppleM4A, with: avAsset, outputFileType: .m4a)
   }
 }

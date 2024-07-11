@@ -20,6 +20,7 @@
 		26E0994A2C40083A00BC16F3 /* AudioExtraction in Frameworks */ = {isa = PBXBuildFile; productRef = 26E099492C40083A00BC16F3 /* AudioExtraction */; };
 		26E0994C2C40083A00BC16F3 /* AudioTranscript in Frameworks */ = {isa = PBXBuildFile; productRef = 26E0994B2C40083A00BC16F3 /* AudioTranscript */; };
 		26E0994E2C40083A00BC16F3 /* FileManger in Frameworks */ = {isa = PBXBuildFile; productRef = 26E0994D2C40083A00BC16F3 /* FileManger */; };
+		26E099512C400B7C00BC16F3 /* TranscriptGenerationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E099502C400B7C00BC16F3 /* TranscriptGenerationLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		26B7450F2C3827BE0007E8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26E099412C3FE3CD00BC16F3 /* AudioTranscript */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AudioTranscript; sourceTree = "<group>"; };
 		26E099462C4007DF00BC16F3 /* Dependences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependences.swift; sourceTree = "<group>"; };
+		26E099502C400B7C00BC16F3 /* TranscriptGenerationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptGenerationLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				26B745012C3827BB0007E8A7 /* AppDelegate.swift */,
 				26B745032C3827BB0007E8A7 /* SceneDelegate.swift */,
 				26E099452C4007CC00BC16F3 /* Dependences */,
+				26E0994F2C400B5300BC16F3 /* Domain */,
 				2688C5112C39AC110037769A /* Pacakges */,
 				26B745152C3827ED0007E8A7 /* VC */,
 				26B745162C3827FB0007E8A7 /* View */,
@@ -152,6 +155,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26E0994F2C400B5300BC16F3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				26E099502C400B7C00BC16F3 /* TranscriptGenerationLogic.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E099512C400B7C00BC16F3 /* TranscriptGenerationLogic.swift in Sources */,
 				26B745062C3827BB0007E8A7 /* MainViewController.swift in Sources */,
 				26B745022C3827BB0007E8A7 /* AppDelegate.swift in Sources */,
 				26A282A82C38464E002CC931 /* RectangleView.swift in Sources */,

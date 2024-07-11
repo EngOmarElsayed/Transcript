@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol AudioExtractionProtocol {
-  static func extractAudio(from fileUrl: URL, to outputUrl: URL) async throws
+  func extractAudio(from fileUrl: URL, to outputUrl: URL) async throws
 }
