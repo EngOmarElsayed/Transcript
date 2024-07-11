@@ -8,7 +8,7 @@
 import AVFoundation
 
 public struct AudioExtraction {
-  private init() {}
+  public init() {}
 }
 
 //MARK: - AudioExtraction conforms to AudioExtractionProtocol
