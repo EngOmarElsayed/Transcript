@@ -26,9 +26,10 @@ final class FileMangerTests: XCTestCase {
   func test_FileStorage_copyContentCopyToAudioFile() {
     let copyUrl = FileMangerTest.videoFile
     let fileStorage = FileStorage(for: .cachesDirectory, in: .userDomainMask)
+    let audioFile = fileStorage.audioUrl()
     
     try? Data(repeating: 30, count: 50).write(to: copyUrl)
-    try? fileStorage.copyContent(from: copyUrl, to: .audioFile)
+    try? fileStorage.copyContent(from: copyUrl, to: audioFile)
     let expectedData = FileMangerTest.contant(at: copyUrl)
     let resultedData = FileMangerTest.contant(at: fileStorage.audioUrl())
     
@@ -38,9 +39,10 @@ final class FileMangerTests: XCTestCase {
   func test_FileStorage_copyContentCopyToVideoFile() {
     let copyUrl = FileMangerTest.audioFile
     let fileStorage = FileStorage(for: .cachesDirectory, in: .userDomainMask)
+    let videoFile = fileStorage.videoUrl()
     
     try? Data(repeating: 30, count: 50).write(to: copyUrl)
-    try? fileStorage.copyContent(from: copyUrl, to: .videoFile)
+    try? fileStorage.copyContent(from: copyUrl, to: videoFile)
     let expectedData = FileMangerTest.contant(at: copyUrl)
     let resultedData = FileMangerTest.contant(at: fileStorage.videoUrl())
     
@@ -50,9 +52,10 @@ final class FileMangerTests: XCTestCase {
   func test_FileStorage_deleteContentOfAudioFile() {
     let copyUrl = FileMangerTest.audioFile
     let fileStorage = FileStorage(for: .cachesDirectory, in: .userDomainMask)
+    let audioFile = fileStorage.audioUrl()
     
     try? Data(repeating: 30, count: 50).write(to: copyUrl)
-    try? fileStorage.deleteContent(from: .audioFile)
+    try? fileStorage.deleteContent(from: audioFile)
     let resultedData = FileMangerTest.contant(at: fileStorage.audioUrl())
     
     XCTAssertNil(resultedData, "The file content contented \(resultedData?.debugDescription ?? "")")
@@ -61,9 +64,10 @@ final class FileMangerTests: XCTestCase {
   func test_FileStorage_deleteContentOfVideoFile() {
     let copyUrl = FileMangerTest.videoFile
     let fileStorage = FileStorage(for: .cachesDirectory, in: .userDomainMask)
+    let videoFile = fileStorage.videoUrl()
     
     try? Data(repeating: 30, count: 50).write(to: copyUrl)
-    try? fileStorage.deleteContent(from: .videoFile)
+    try? fileStorage.deleteContent(from: videoFile)
     let resultedData = FileMangerTest.contant(at: fileStorage.videoUrl())
     
     XCTAssertNil(resultedData, "The file content contented \(resultedData?.debugDescription ?? "")")
@@ -78,7 +82,7 @@ fileprivate class FileMangerTest {
   }
   
   static var audioFile: URL {
-    directoryUrl.appendingPathComponent("audio", conformingTo: .mp3)
+    directoryUrl.appendingPathComponent("audio", conformingTo: .mpeg4Audio)
   }
   
   static var videoFile: URL {

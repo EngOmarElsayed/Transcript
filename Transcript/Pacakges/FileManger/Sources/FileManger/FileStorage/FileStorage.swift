@@ -31,25 +31,13 @@ extension FileStorage: FileStorageProtocol {
     return videoFileUrl
   }
   
-  public func copyContent(from copyUrl: URL, to localUrl: CopyUrlToFile) throws {
-    switch localUrl {
-    case .audioFile:
-      try fileManger.copyItem(at: copyUrl, to: audioFileUrl)
-      
-    case .videoFile:
-      try fileManger.copyItem(at: copyUrl, to: videoFileUrl)
-    }
+  public func copyContent(from copyUrl: URL, to localUrl: URL) throws {
+    try fileManger.copyItem(at: copyUrl, to: videoFileUrl)
   }
   
-  public func deleteContent(from localUrl: CopyUrlToFile) throws {
+  public func deleteContent(from localUrl: URL) throws {
     let emptyData = Data()
-    
-    switch localUrl {
-    case .audioFile:
-      try emptyData.write(to: audioFileUrl)
-    case .videoFile:
-      try emptyData.write(to: videoFileUrl)
-    }
+    try emptyData.write(to: videoFileUrl)
   }
 }
 
