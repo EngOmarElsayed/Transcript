@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AudioTranscriptProtocol {
+public protocol AudioTranscriptProtocol {
   func requestAudioAuthorization(completion: @escaping (Bool) -> Void)
   func generateTranscript(for audioUrl: URL, lang: LocaleLanguage?) async throws -> String
 }

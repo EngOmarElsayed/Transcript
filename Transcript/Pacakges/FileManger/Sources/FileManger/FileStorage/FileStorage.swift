@@ -8,7 +8,7 @@
 import Foundation
 import UniformTypeIdentifiers
 
-public final class FileStorage: FileStorageProtocol {
+public final class FileStorage {
   private var audioFileUrl: URL
   private var videoFileUrl: URL
   
@@ -22,7 +22,7 @@ public final class FileStorage: FileStorageProtocol {
   }
 }
 
-extension FileStorage {
+extension FileStorage: FileStorageProtocol {
   public func audioUrl() -> URL {
     return audioFileUrl
   }

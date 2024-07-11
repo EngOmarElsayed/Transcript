@@ -1,0 +1,15 @@
+{
+  "originHash" : "103d79255789cf507a23d1cb8cf12da7d1fd205ab0ac92f99bb671c2190f51fd",
+  "pins" : [
+    {
+      "identity" : "injection",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/EngOmarElsayed/Injection.git",
+      "state" : {
+        "revision" : "86ffd9355e218ab8e2d025e5eb18a81c51d8b761",
+        "version" : "1.3.0"
+      }
+    }
+  ],
+  "version" : 3
+}

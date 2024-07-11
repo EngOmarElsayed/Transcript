@@ -15,6 +15,11 @@
 		26B745092C3827BC0007E8A7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 26B745082C3827BC0007E8A7 /* Base */; };
 		26B7450B2C3827BD0007E8A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26B7450A2C3827BD0007E8A7 /* Assets.xcassets */; };
 		26B7450E2C3827BD0007E8A7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 26B7450D2C3827BD0007E8A7 /* Base */; };
+		26E099442C4007C100BC16F3 /* Injection in Frameworks */ = {isa = PBXBuildFile; productRef = 26E099432C4007C100BC16F3 /* Injection */; };
+		26E099472C4007DF00BC16F3 /* Dependences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E099462C4007DF00BC16F3 /* Dependences.swift */; };
+		26E0994A2C40083A00BC16F3 /* AudioExtraction in Frameworks */ = {isa = PBXBuildFile; productRef = 26E099492C40083A00BC16F3 /* AudioExtraction */; };
+		26E0994C2C40083A00BC16F3 /* AudioTranscript in Frameworks */ = {isa = PBXBuildFile; productRef = 26E0994B2C40083A00BC16F3 /* AudioTranscript */; };
+		26E0994E2C40083A00BC16F3 /* FileManger in Frameworks */ = {isa = PBXBuildFile; productRef = 26E0994D2C40083A00BC16F3 /* FileManger */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,7 @@
 		26B7450D2C3827BD0007E8A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26B7450F2C3827BE0007E8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26E099412C3FE3CD00BC16F3 /* AudioTranscript */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AudioTranscript; sourceTree = "<group>"; };
+		26E099462C4007DF00BC16F3 /* Dependences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependences.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E0994E2C40083A00BC16F3 /* FileManger in Frameworks */,
+				26E0994A2C40083A00BC16F3 /* AudioExtraction in Frameworks */,
+				26E099442C4007C100BC16F3 /* Injection in Frameworks */,
+				26E0994C2C40083A00BC16F3 /* AudioTranscript in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +94,7 @@
 			children = (
 				26B745002C3827BB0007E8A7 /* Transcript */,
 				26B744FF2C3827BB0007E8A7 /* Products */,
+				26E099482C40083A00BC16F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +111,7 @@
 			children = (
 				26B745012C3827BB0007E8A7 /* AppDelegate.swift */,
 				26B745032C3827BB0007E8A7 /* SceneDelegate.swift */,
+				26E099452C4007CC00BC16F3 /* Dependences */,
 				2688C5112C39AC110037769A /* Pacakges */,
 				26B745152C3827ED0007E8A7 /* VC */,
 				26B745162C3827FB0007E8A7 /* View */,
@@ -127,6 +139,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		26E099452C4007CC00BC16F3 /* Dependences */ = {
+			isa = PBXGroup;
+			children = (
+				26E099462C4007DF00BC16F3 /* Dependences.swift */,
+			);
+			path = Dependences;
+			sourceTree = "<group>";
+		};
+		26E099482C40083A00BC16F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +170,12 @@
 			dependencies = (
 			);
 			name = Transcript;
+			packageProductDependencies = (
+				26E099432C4007C100BC16F3 /* Injection */,
+				26E099492C40083A00BC16F3 /* AudioExtraction */,
+				26E0994B2C40083A00BC16F3 /* AudioTranscript */,
+				26E0994D2C40083A00BC16F3 /* FileManger */,
+			);
 			productName = Transcript;
 			productReference = 26B744FE2C3827BB0007E8A7 /* Transcript.app */;
 			productType = "com.apple.product-type.application";
@@ -171,6 +204,9 @@
 				Base,
 			);
 			mainGroup = 26B744F52C3827BB0007E8A7;
+			packageReferences = (
+				26E099422C4007C100BC16F3 /* XCRemoteSwiftPackageReference "Injection" */,
+			);
 			productRefGroup = 26B744FF2C3827BB0007E8A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -202,6 +238,7 @@
 				26B745022C3827BB0007E8A7 /* AppDelegate.swift in Sources */,
 				26A282A82C38464E002CC931 /* RectangleView.swift in Sources */,
 				26B745042C3827BB0007E8A7 /* SceneDelegate.swift in Sources */,
+				26E099472C4007DF00BC16F3 /* Dependences.swift in Sources */,
 				2688C5052C39366C0037769A /* PHPPickerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +472,37 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		26E099422C4007C100BC16F3 /* XCRemoteSwiftPackageReference "Injection" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EngOmarElsayed/Injection.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		26E099432C4007C100BC16F3 /* Injection */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26E099422C4007C100BC16F3 /* XCRemoteSwiftPackageReference "Injection" */;
+			productName = Injection;
+		};
+		26E099492C40083A00BC16F3 /* AudioExtraction */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AudioExtraction;
+		};
+		26E0994B2C40083A00BC16F3 /* AudioTranscript */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AudioTranscript;
+		};
+		26E0994D2C40083A00BC16F3 /* FileManger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FileManger;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 26B744F62C3827BB0007E8A7 /* Project object */;
 }
