@@ -52,13 +52,13 @@ extension AudioTranscript {
     let transcript: String = try await withCheckedThrowingContinuation { continuation in
       sF.recognitionTask(with: request) { result, error in
         switch (result, error) {
-        case (nil, let error?):
+        case (.none, let error?):
           continuation.resume(throwing: error)
           
-        case(let result?, nil):
+        case(let result?, .none):
           continuation.resume(returning: result.bestTranscription.formattedString)
           
-        case(let result?, let error?):
+        case(let result?, .some(_)):
           continuation.resume(returning: result.bestTranscription.formattedString)
           
         default:
