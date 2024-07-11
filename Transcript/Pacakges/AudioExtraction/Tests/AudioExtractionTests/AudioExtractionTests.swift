@@ -16,9 +16,7 @@ final class AudioExtractionTests: XCTestCase {
     if let videoUrl = Bundle.module.url(forResource: "test", withExtension: ".mov") {
       let audioFileUrl = FileMangerTest.audioFile
       
-      let au = AudioExtraction()
-      try await au.extractAudio(from: videoUrl, to: audioFileUrl)
-      
+      try await AudioExtraction.extractAudio(from: videoUrl, to: audioFileUrl)
       
       playAudio(from: audioFileUrl)
     } else {
