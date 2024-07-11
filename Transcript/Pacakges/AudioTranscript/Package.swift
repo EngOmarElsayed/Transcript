@@ -5,6 +5,10 @@ import PackageDescription
 
 let package = Package(
     name: "AudioTranscript",
+    platforms: [
+      .iOS(.v17),
+      .macOS(.v14)
+    ],
     products: [
         .library(
             name: "AudioTranscript",
