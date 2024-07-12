@@ -17,11 +17,13 @@ extension LocaleLanguage {
   public var description: String {
     switch self {
     case .GbEnglish:
-      return "English (United Kingdom)"
+      return "English (UK 🇬🇧)"
     case .UsEnglish:
-      return "English (United States)"
+      return "English (US 🇺🇸)"
     case .EgArabic:
-      return "Arabic (Egypt)"
+      return "Arabic (Egypt 🇪🇬)"
     }
   }
 }
+
+extension LocaleLanguage: CaseIterable {}

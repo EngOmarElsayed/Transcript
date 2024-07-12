@@ -10,6 +10,8 @@ import Injection
 import AudioTranscript
 
 final class MainScreenViewModel {
+  let langArray: [LocaleLanguage] = LocaleLanguage.allCases
+  
   @Published var isReadyToSubmit: Bool = false
   @Published var isAllowedAccess: Bool = false
   @Published var isVideoSelected: Bool = false {
@@ -18,7 +20,7 @@ final class MainScreenViewModel {
     }
   }
   
-  var lang: LocaleLanguage = .UsEnglish {
+  private var lang: LocaleLanguage = .UsEnglish {
     didSet {
       isReadyToSubmit = isVideoSelected
     }
@@ -41,5 +43,10 @@ extension MainScreenViewModel {
     } catch {
       print(error.localizedDescription)
     }
+  }
+  
+  func changeSelectedLang(to lang: LocaleLanguage) {
+    self.lang = lang
+    print(self.lang.rawValue)
   }
 }

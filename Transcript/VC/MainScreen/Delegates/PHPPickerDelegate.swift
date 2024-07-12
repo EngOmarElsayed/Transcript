@@ -7,12 +7,21 @@
 
 import PhotosUI
 
-class PHPPickerDelegate: PHPickerViewControllerDelegate {
+final class PHPPickerDelegate: PHPickerViewControllerDelegate {
+  let pickerCompletion: () -> Void
+  
+  init(pickerCompletion: @escaping () -> Void) {
+    self.pickerCompletion = pickerCompletion
+  }
+}
+
+extension PHPPickerDelegate {
   func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
     if results.isEmpty {
       picker.dismiss(animated: true)
     } else {
-      results[0].itemProvider
+      // Fetch video then
+      pickerCompletion()
     }
   }
 }
