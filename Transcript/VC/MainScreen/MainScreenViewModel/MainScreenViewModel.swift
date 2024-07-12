@@ -8,10 +8,12 @@
 import Foundation
 import Injection
 import AudioTranscript
+import UniformTypeIdentifiers
 
 final class MainScreenViewModel {
   let langArray: [LocaleLanguage] = LocaleLanguage.allCases
   
+  @Published var isLoading: Bool = false
   @Published var isReadyToSubmit: Bool = false
   @Published var isAllowedAccess: Bool = false
   @Published var isVideoSelected: Bool = false {
@@ -42,6 +44,15 @@ extension MainScreenViewModel {
       try mainViewLogic.copyContent(from: url)
     } catch {
       print(error.localizedDescription)
+    }
+  }
+  
+  func convertItemToVideo(_ item: NSItemProvider) {
+    isLoading = true
+    item.loadFileRepresentation(forTypeIdentifier: UTType.movie.identifier) { [weak self] url, error in
+      guard let url, let self else { return }
+      copyContent(from: url)
+      isLoading = false
     }
   }
   

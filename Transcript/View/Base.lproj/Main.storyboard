@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,8 +36,8 @@
                                                         <imageReference key="image" image="photo.badge.arrow.down" catalog="system" symbolScale="default" renderingMode="hierarchical">
                                                             <hierarchicalColors>
                                                                 <color systemColor="systemGreenColor"/>
-                                                                <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color name="BlackColor"/>
+                                                                <color name="BlackColor"/>
                                                             </hierarchicalColors>
                                                         </imageReference>
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="regular"/>
@@ -93,17 +94,50 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <visualEffectView hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wf-vt-i5Z">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6m4-lA-N08">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="aEE-BH-1l3">
+                                            <rect key="frame" x="176.66666666666666" y="403.66666666666669" width="37" height="37"/>
+                                        </activityIndicatorView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="las-7B-xct">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="716"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zc6-s8-5WE">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="716"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="regular"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aEE-BH-1l3" firstAttribute="centerX" secondItem="6m4-lA-N08" secondAttribute="centerX" id="JU1-Lw-gvL"/>
+                                        <constraint firstItem="aEE-BH-1l3" firstAttribute="centerY" secondItem="6m4-lA-N08" secondAttribute="centerY" id="nEB-oy-w9X"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="4Wf-vt-i5Z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2UD-yA-Qcw"/>
+                            <constraint firstItem="4Wf-vt-i5Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7po-YU-52k"/>
                             <constraint firstItem="eK4-sq-TsE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="EBv-Zp-45U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Wf-vt-i5Z" secondAttribute="trailing" id="XFL-yP-E9a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eK4-sq-TsE" secondAttribute="trailing" constant="20" id="gBz-vl-sPI"/>
                             <constraint firstItem="eK4-sq-TsE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="nbJ-cE-0jR"/>
+                            <constraint firstAttribute="bottom" secondItem="4Wf-vt-i5Z" secondAttribute="bottom" id="zig-Ci-aSb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Genrate Transcript" id="Xky-Y5-NXv"/>
                     <connections>
+                        <outlet property="blurEffect" destination="4Wf-vt-i5Z" id="Q2M-FB-ET3"/>
                         <outlet property="generateButton" destination="V1r-Sq-YCa" id="yeI-1z-fKY"/>
                         <outlet property="popButton" destination="d6P-uM-1wg" id="FuG-Tn-2N1"/>
                         <outlet property="uploadedLabel" destination="rj7-Uj-rHz" id="Xht-Fn-VIz"/>
@@ -139,6 +173,9 @@
     </scenes>
     <resources>
         <image name="photo.badge.arrow.down" catalog="system" width="128" height="97"/>
+        <namedColor name="BlackColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

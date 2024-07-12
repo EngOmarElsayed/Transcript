@@ -6,14 +6,16 @@
 //
 
 import UIKit
-
+import PhotosUI
 // File is successfully uploaded ✅
 
 class MainViewController: UIViewController {
   private let viewModel = MainScreenViewModel()
-  private var phpPicker: PHPPickerDelegate!
+  private var phpPicker: PHPickerViewControllerDelegate!
   
   //MARK: -  Outlets
+  @IBOutlet var blurEffect: UIVisualEffectView!
+  
   @IBOutlet var uploadedLabel: UILabel!
   @IBOutlet var generateButton: UIButton!
   @IBOutlet var popButton: UIButton!
@@ -23,14 +25,15 @@ class MainViewController: UIViewController {
   }
   
   @IBAction func rectangleTapAction(_ sender: UITapGestureRecognizer) {
-    
-    print("Tapped, Well Done Omar. El7")
+    let picker = setupPickerView()
+    present(picker, animated: true)
   }
   
   //MARK: -  ViewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
     setupVC()
+    viewModel.requestAccess()
   }
 }
 
@@ -42,10 +45,7 @@ extension MainViewController {
   }
   
   private func setupViewControllerVar() {
-    phpPicker = PHPPickerDelegate(pickerCompletion: { [weak self] in
-      guard let self else { return }
-      viewModel.isVideoSelected = true
-    })
+    phpPicker = PHPPickerDelegate(pickerCompletion: viewModel.convertItemToVideo(_:))
   }
   
   private func setupPopUpButton() {
@@ -61,6 +61,18 @@ extension MainViewController {
     let menu = UIMenu(title: "Select Language", options: .displayInline, children: arrayOfActions)
     popButton.menu = consume menu
     popButton.showsMenuAsPrimaryAction = true
+  }
+  
+  private func setupPickerView() -> PHPickerViewController {
+    var configurationForPHP = PHPickerConfiguration()
+    configurationForPHP.filter = .videos
+    configurationForPHP.selectionLimit = 1
+    configurationForPHP.selection = .default
+    
+    let picker = PHPickerViewController(configuration: configurationForPHP)
+    picker.delegate = phpPicker
+    
+    return picker
   }
 }
 
