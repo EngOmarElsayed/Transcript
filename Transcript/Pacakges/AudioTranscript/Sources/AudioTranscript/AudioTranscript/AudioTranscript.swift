@@ -48,8 +48,11 @@ extension AudioTranscript: AudioTranscriptProtocol {
 extension AudioTranscript {
   private func createRecognitionRequest(for audioUrl: URL, and sF: SFSpeechRecognizer) async throws -> String {
     let request = SFSpeechURLRecognitionRequest(url: audioUrl)
-    
-    let transcript: String = try await withCheckedThrowingContinuation { continuation in
+    return try await recognitionTask(for: request, and: sF)
+  }
+  
+  private func recognitionTask(for request: SFSpeechURLRecognitionRequest, and sF: SFSpeechRecognizer) async throws -> String {
+    try await withCheckedThrowingContinuation { continuation in
       sF.recognitionTask(with: request) { result, error in
         switch (result, error) {
         case (.none, let error?):
@@ -66,6 +69,5 @@ extension AudioTranscript {
         }
       }
     }
-    return transcript
   }
 }
