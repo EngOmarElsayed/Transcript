@@ -22,6 +22,8 @@
 		26E0994E2C40083A00BC16F3 /* FileManger in Frameworks */ = {isa = PBXBuildFile; productRef = 26E0994D2C40083A00BC16F3 /* FileManger */; };
 		26E099512C400B7C00BC16F3 /* TranscriptGenerationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E099502C400B7C00BC16F3 /* TranscriptGenerationLogic.swift */; };
 		26E099552C4151B400BC16F3 /* TranscriptGenerationLogicProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E099542C4151B400BC16F3 /* TranscriptGenerationLogicProtocol.swift */; };
+		26E0995B2C41527300BC16F3 /* MainViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E0995A2C41527300BC16F3 /* MainViewLogic.swift */; };
+		26E0995D2C4155B700BC16F3 /* MainViewLogicProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E0995C2C4155B700BC16F3 /* MainViewLogicProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		26E099462C4007DF00BC16F3 /* Dependences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependences.swift; sourceTree = "<group>"; };
 		26E099502C400B7C00BC16F3 /* TranscriptGenerationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptGenerationLogic.swift; sourceTree = "<group>"; };
 		26E099542C4151B400BC16F3 /* TranscriptGenerationLogicProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptGenerationLogicProtocol.swift; sourceTree = "<group>"; };
+		26E0995A2C41527300BC16F3 /* MainViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewLogic.swift; sourceTree = "<group>"; };
+		26E0995C2C4155B700BC16F3 /* MainViewLogicProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewLogicProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 		26E0994F2C400B5300BC16F3 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				26E099572C41522900BC16F3 /* MainViewLogic */,
 				26E099522C41517700BC16F3 /* TranscriptGenerationLogic */,
 			);
 			path = Domain;
@@ -190,6 +195,31 @@
 				26E099502C400B7C00BC16F3 /* TranscriptGenerationLogic.swift */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		26E099572C41522900BC16F3 /* MainViewLogic */ = {
+			isa = PBXGroup;
+			children = (
+				26E099582C41524900BC16F3 /* Class */,
+				26E099592C41525300BC16F3 /* Protocol */,
+			);
+			path = MainViewLogic;
+			sourceTree = "<group>";
+		};
+		26E099582C41524900BC16F3 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				26E0995A2C41527300BC16F3 /* MainViewLogic.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		26E099592C41525300BC16F3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				26E0995C2C4155B700BC16F3 /* MainViewLogicProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +308,8 @@
 				26A282A82C38464E002CC931 /* RectangleView.swift in Sources */,
 				26B745042C3827BB0007E8A7 /* SceneDelegate.swift in Sources */,
 				26E099552C4151B400BC16F3 /* TranscriptGenerationLogicProtocol.swift in Sources */,
+				26E0995D2C4155B700BC16F3 /* MainViewLogicProtocol.swift in Sources */,
+				26E0995B2C41527300BC16F3 /* MainViewLogic.swift in Sources */,
 				26E099472C4007DF00BC16F3 /* Dependences.swift in Sources */,
 				2688C5052C39366C0037769A /* PHPPickerDelegate.swift in Sources */,
 			);

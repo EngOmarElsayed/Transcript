@@ -31,8 +31,9 @@ extension FileStorage: FileStorageProtocol {
     return videoFileUrl
   }
   
-  public func copyContent(from copyUrl: URL, to localUrl: URL) throws {
-    try fileManger.copyItem(at: copyUrl, to: videoFileUrl)
+  public func copyContent(from copyUrl: URL, to localUrl: URL? = nil) throws {
+    let localUrl = localUrl == nil ? videoFileUrl: localUrl!
+    try fileManger.copyItem(at: copyUrl, to: localUrl)
   }
   
   public func deleteContent(from localUrl: URL) throws {
