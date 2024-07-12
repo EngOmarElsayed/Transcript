@@ -15,7 +15,6 @@ class MainViewController: UIViewController {
   
   //MARK: -  Outlets
   @IBOutlet var blurEffect: UIVisualEffectView!
-  
   @IBOutlet var uploadedLabel: UILabel!
   @IBOutlet var generateButton: UIButton!
   @IBOutlet var popButton: UIButton!
