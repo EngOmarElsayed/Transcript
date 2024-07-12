@@ -13,7 +13,7 @@ final class MainViewLogic {
   @Injected(\.audioTranscript) private var audioTranscript
 }
 
-extension MainViewLogic {
+extension MainViewLogic: MainViewLogicProtocol {
   func copyContent(from url: URL) throws {
     try fileStorage.copyContent(from: url, to: nil)
   }

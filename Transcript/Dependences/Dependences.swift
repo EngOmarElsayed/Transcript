@@ -23,6 +23,10 @@ private struct FileStorageKey: InjectionKey {
   static var currentValue: FileStorageProtocol = FileStorage(for: .documentDirectory, in: .userDomainMask)
 }
 
+private struct MainViewLogicKey: InjectionKey {
+  static var currentValue: MainViewLogicProtocol = MainViewLogic()
+}
+
 extension InjectedValues {
   var audioTranscript: AudioTranscriptProtocol {
     get { Self[AudioTranscriptKey.self] }
@@ -37,5 +41,10 @@ extension InjectedValues {
   var fileStorage: FileStorageProtocol {
     get { Self[FileStorageKey.self] }
     set { Self[FileStorageKey.self] = newValue }
+  }
+  
+  var mainViewLogic: MainViewLogicProtocol {
+    get { Self[MainViewLogicKey.self] }
+    set { Self[MainViewLogicKey.self] = newValue }
   }
 }

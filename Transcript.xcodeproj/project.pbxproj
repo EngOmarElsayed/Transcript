@@ -24,6 +24,7 @@
 		26E099552C4151B400BC16F3 /* TranscriptGenerationLogicProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E099542C4151B400BC16F3 /* TranscriptGenerationLogicProtocol.swift */; };
 		26E0995B2C41527300BC16F3 /* MainViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E0995A2C41527300BC16F3 /* MainViewLogic.swift */; };
 		26E0995D2C4155B700BC16F3 /* MainViewLogicProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E0995C2C4155B700BC16F3 /* MainViewLogicProtocol.swift */; };
+		26E099602C41669300BC16F3 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E0995F2C41669300BC16F3 /* MainScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		26E099542C4151B400BC16F3 /* TranscriptGenerationLogicProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptGenerationLogicProtocol.swift; sourceTree = "<group>"; };
 		26E0995A2C41527300BC16F3 /* MainViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewLogic.swift; sourceTree = "<group>"; };
 		26E0995C2C4155B700BC16F3 /* MainViewLogicProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewLogicProtocol.swift; sourceTree = "<group>"; };
+		26E0995F2C41669300BC16F3 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		2688C5132C39AECD0037769A /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				26E0995E2C41667E00BC16F3 /* MainScreenViewModel */,
 				2688C5022C3936430037769A /* Delegates */,
 				2688C5122C39AEB40037769A /* MainScreenVC */,
 			);
@@ -222,6 +225,14 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		26E0995E2C41667E00BC16F3 /* MainScreenViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				26E0995F2C41669300BC16F3 /* MainScreenViewModel.swift */,
+			);
+			path = MainScreenViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -303,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26E099512C400B7C00BC16F3 /* TranscriptGenerationLogic.swift in Sources */,
+				26E099602C41669300BC16F3 /* MainScreenViewModel.swift in Sources */,
 				26B745062C3827BB0007E8A7 /* MainViewController.swift in Sources */,
 				26B745022C3827BB0007E8A7 /* AppDelegate.swift in Sources */,
 				26A282A82C38464E002CC931 /* RectangleView.swift in Sources */,
