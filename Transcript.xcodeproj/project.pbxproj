@@ -64,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		262A9D202C41A723003A7793 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				26B7450A2C3827BD0007E8A7 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		2688C5022C3936430037769A /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +128,7 @@
 		26B745002C3827BB0007E8A7 /* Transcript */ = {
 			isa = PBXGroup;
 			children = (
+				26B7450F2C3827BE0007E8A7 /* Info.plist */,
 				26B745012C3827BB0007E8A7 /* AppDelegate.swift */,
 				26B745032C3827BB0007E8A7 /* SceneDelegate.swift */,
 				26E099452C4007CC00BC16F3 /* Dependences */,
@@ -127,8 +136,7 @@
 				2688C5112C39AC110037769A /* Pacakges */,
 				26B745152C3827ED0007E8A7 /* VC */,
 				26B745162C3827FB0007E8A7 /* View */,
-				26B7450A2C3827BD0007E8A7 /* Assets.xcassets */,
-				26B7450F2C3827BE0007E8A7 /* Info.plist */,
+				262A9D202C41A723003A7793 /* Resources */,
 			);
 			path = Transcript;
 			sourceTree = "<group>";

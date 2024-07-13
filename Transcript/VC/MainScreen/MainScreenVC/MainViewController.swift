@@ -7,11 +7,12 @@
 
 import UIKit
 import PhotosUI
-// File is successfully uploaded ✅
+import Combine
 
 class MainViewController: UIViewController {
   private let viewModel = MainScreenViewModel()
   private var phpPicker: PHPickerViewControllerDelegate!
+  private var cancellable = Set<AnyCancellable>()
   
   //MARK: -  Outlets
   @IBOutlet var blurEffect: UIVisualEffectView!
@@ -32,15 +33,34 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupVC()
-    viewModel.requestAccess()
   }
 }
 
 //MARK: -  Setup Methods
 extension MainViewController {
+  
   private func setupVC() {
     setupViewControllerVar()
     setupPopUpButton()
+    subscribeToPublishers()
+    viewModel.requestAccess()
+  }
+  
+  private func subscribeToPublishers() {
+    viewModel.$isLoading.sink { [weak self] isLoading in
+      guard let self else { return }
+      blurEffect.isHidden = !isLoading
+    }.store(in: &cancellable)
+    
+    viewModel.$isReadyToSubmit.sink { [weak self] isReadyToSubmit in
+      guard let self else { return }
+      generateButton.isEnabled = isReadyToSubmit
+    }.store(in: &cancellable)
+    
+    viewModel.$isVideoSelected.sink { [weak self] isVideoSelected in
+      guard let self else { return }
+      uploadedLabel.text = isVideoSelected ? "File is successfully uploaded ✅": "Tap to uploaded your video"
+    }.store(in: &cancellable)
   }
   
   private func setupViewControllerVar() {

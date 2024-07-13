@@ -15,16 +15,16 @@ final class MainScreenViewModel {
   
   @Published var isLoading: Bool = false
   @Published var isReadyToSubmit: Bool = false
-  @Published var isAllowedAccess: Bool = false
   @Published var isVideoSelected: Bool = false {
     didSet {
-      isReadyToSubmit = isVideoSelected
+      isReadyToSubmit = isVideoSelected && isAllowedAccess
     }
   }
   
-  private var lang: LocaleLanguage = .UsEnglish {
+  private var isAllowedAccess: Bool = false
+  private var lang: LocaleLanguage = .GbEnglish {
     didSet {
-      isReadyToSubmit = isVideoSelected
+      isReadyToSubmit = isVideoSelected && isAllowedAccess
     }
   }
   
@@ -52,12 +52,19 @@ extension MainScreenViewModel {
     item.loadFileRepresentation(forTypeIdentifier: UTType.movie.identifier) { [weak self] url, error in
       guard let url, let self else { return }
       copyContent(from: url)
-      isLoading = false
+      DispatchQueue.main.async { self.videoIsSelected() }
     }
   }
   
   func changeSelectedLang(to lang: LocaleLanguage) {
     self.lang = lang
-    print(self.lang.rawValue)
+  }
+}
+
+//MARK: -  Private Methods
+extension MainScreenViewModel {
+  private func videoIsSelected() {
+    isLoading = false
+    isVideoSelected = true
   }
 }

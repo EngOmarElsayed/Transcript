@@ -33,12 +33,12 @@ extension FileStorage: FileStorageProtocol {
   
   public func copyContent(from copyUrl: URL, to localUrl: URL? = nil) throws {
     let localUrl = localUrl == nil ? videoFileUrl: localUrl!
+    try deleteContent(from: localUrl)
     try fileManger.copyItem(at: copyUrl, to: localUrl)
   }
   
   public func deleteContent(from localUrl: URL) throws {
-    let emptyData = Data()
-    try emptyData.write(to: videoFileUrl)
+    try fileManger.removeItem(at: localUrl)
   }
 }
 

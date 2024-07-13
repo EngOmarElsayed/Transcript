@@ -7,7 +7,6 @@
 
 import UIKit
 
-@IBDesignable
 class RectangleView: UIView {
 
   override func layoutSubviews() {
