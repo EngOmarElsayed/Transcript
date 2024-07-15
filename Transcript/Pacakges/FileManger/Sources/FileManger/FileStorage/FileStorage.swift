@@ -18,7 +18,7 @@ public final class FileStorage {
   public init(for directory: FileManager.SearchPathDirectory, in domainMask: FileManager.SearchPathDomainMask) {
     self.directoryUrl = fileManger.urls(for: directory, in: domainMask).first!
     self.audioFileUrl = directoryUrl.appendingPathComponent("audio", conformingTo: .mpeg4Audio)
-    self.videoFileUrl = directoryUrl.appendingPathComponent("video", conformingTo: .movie)
+    self.videoFileUrl = directoryUrl.appendingPathComponent("video", conformingTo: .mpeg4Movie)
   }
 }
 
@@ -33,7 +33,7 @@ extension FileStorage: FileStorageProtocol {
   
   public func copyContent(from copyUrl: URL, to localUrl: URL? = nil) throws {
     let localUrl = localUrl == nil ? videoFileUrl: localUrl!
-    try deleteContent(from: localUrl)
+    try? deleteContent(from: localUrl)
     try fileManger.copyItem(at: copyUrl, to: localUrl)
   }
   

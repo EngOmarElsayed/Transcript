@@ -20,10 +20,6 @@ class MainViewController: UIViewController {
   @IBOutlet var generateButton: UIButton!
   @IBOutlet var popButton: UIButton!
   
-  @IBAction func generateTranscriptAction(_ sender: UIButton) {
-    
-  }
-  
   @IBAction func rectangleTapAction(_ sender: UITapGestureRecognizer) {
     let picker = setupPickerView()
     present(picker, animated: true)

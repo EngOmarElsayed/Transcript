@@ -9,6 +9,7 @@ import Foundation
 import Injection
 import AudioTranscript
 import UniformTypeIdentifiers
+import UserDefaults
 
 final class MainScreenViewModel {
   let langArray: [LocaleLanguage] = LocaleLanguage.allCases
@@ -22,13 +23,12 @@ final class MainScreenViewModel {
   }
   
   private var isAllowedAccess: Bool = false
-  private var lang: LocaleLanguage = .GbEnglish {
+  @Injected(\.mainViewLogic) private var mainViewLogic
+  @UserDefault(\.chosenLang) private var lang: LocaleLanguage = .GbEnglish {
     didSet {
       isReadyToSubmit = isVideoSelected && isAllowedAccess
     }
   }
-  
-  @Injected(\.mainViewLogic) private var mainViewLogic
 }
 
 extension MainScreenViewModel {
@@ -68,3 +68,4 @@ extension MainScreenViewModel {
     isVideoSelected = true
   }
 }
+

@@ -27,6 +27,10 @@ private struct MainViewLogicKey: InjectionKey {
   static var currentValue: MainViewLogicProtocol = MainViewLogic()
 }
 
+private struct TranscriptGenerationLogicKey: InjectionKey {
+  static var currentValue: TranscriptGenerationLogicProtocol = TranscriptGenerationLogic()
+}
+
 extension InjectedValues {
   var audioTranscript: AudioTranscriptProtocol {
     get { Self[AudioTranscriptKey.self] }
@@ -46,5 +50,10 @@ extension InjectedValues {
   var mainViewLogic: MainViewLogicProtocol {
     get { Self[MainViewLogicKey.self] }
     set { Self[MainViewLogicKey.self] = newValue }
+  }
+  
+  var transcriptGenerationLogic: TranscriptGenerationLogicProtocol {
+    get { Self[TranscriptGenerationLogicKey.self] }
+    set { Self[TranscriptGenerationLogicKey.self] = newValue }
   }
 }

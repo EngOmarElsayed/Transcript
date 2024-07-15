@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		267476C82C45036B001CC92C /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267476C72C45036B001CC92C /* DefaultKeys.swift */; };
+		267476CC2C4503D4001CC92C /* LocaleLanguageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267476CB2C4503D4001CC92C /* LocaleLanguageExtension.swift */; };
+		2678EB142C42AAE500A83977 /* TranscriptResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678EB132C42AAE500A83977 /* TranscriptResultViewController.swift */; };
+		2678EB172C42AC5300A83977 /* TranscriptResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678EB162C42AC5300A83977 /* TranscriptResultViewModel.swift */; };
+		2678EB1A2C42F8FD00A83977 /* UserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 2678EB192C42F8FD00A83977 /* UserDefaults */; };
 		2688C5052C39366C0037769A /* PHPPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2688C5042C39366C0037769A /* PHPPickerDelegate.swift */; };
 		26A282A82C38464E002CC931 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A282A72C38464E002CC931 /* RectangleView.swift */; };
 		26B745022C3827BB0007E8A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B745012C3827BB0007E8A7 /* AppDelegate.swift */; };
@@ -29,6 +34,10 @@
 
 /* Begin PBXFileReference section */
 		266553842C3AA9F600BE90D7 /* AudioExtraction */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AudioExtraction; sourceTree = "<group>"; };
+		267476C72C45036B001CC92C /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
+		267476CB2C4503D4001CC92C /* LocaleLanguageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleLanguageExtension.swift; sourceTree = "<group>"; };
+		2678EB132C42AAE500A83977 /* TranscriptResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptResultViewController.swift; sourceTree = "<group>"; };
+		2678EB162C42AC5300A83977 /* TranscriptResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptResultViewModel.swift; sourceTree = "<group>"; };
 		2688C5042C39366C0037769A /* PHPPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPPickerDelegate.swift; sourceTree = "<group>"; };
 		2688C5102C39ABD70037769A /* FileManger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FileManger; path = Transcript/Pacakges/FileManger; sourceTree = SOURCE_ROOT; };
 		26A282A72C38464E002CC931 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
@@ -56,6 +65,7 @@
 			files = (
 				26E0994E2C40083A00BC16F3 /* FileManger in Frameworks */,
 				26E0994A2C40083A00BC16F3 /* AudioExtraction in Frameworks */,
+				2678EB1A2C42F8FD00A83977 /* UserDefaults in Frameworks */,
 				26E099442C4007C100BC16F3 /* Injection in Frameworks */,
 				26E0994C2C40083A00BC16F3 /* AudioTranscript in Frameworks */,
 			);
@@ -70,6 +80,64 @@
 				26B7450A2C3827BD0007E8A7 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		267476C52C45034C001CC92C /* keys */ = {
+			isa = PBXGroup;
+			children = (
+				267476C62C450352001CC92C /* UserDefaultKeys */,
+			);
+			path = keys;
+			sourceTree = "<group>";
+		};
+		267476C62C450352001CC92C /* UserDefaultKeys */ = {
+			isa = PBXGroup;
+			children = (
+				267476C72C45036B001CC92C /* DefaultKeys.swift */,
+			);
+			path = UserDefaultKeys;
+			sourceTree = "<group>";
+		};
+		267476C92C4503AF001CC92C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				267476CA2C4503C8001CC92C /* LocaleLanguage */,
+				267476C52C45034C001CC92C /* keys */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		267476CA2C4503C8001CC92C /* LocaleLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				267476CB2C4503D4001CC92C /* LocaleLanguageExtension.swift */,
+			);
+			path = LocaleLanguage;
+			sourceTree = "<group>";
+		};
+		2678EB112C42AAAE00A83977 /* TranscriptResultScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2678EB152C42AC3800A83977 /* ViewModel */,
+				2678EB122C42AACF00A83977 /* TranscriptResultVC */,
+			);
+			path = TranscriptResultScreen;
+			sourceTree = "<group>";
+		};
+		2678EB122C42AACF00A83977 /* TranscriptResultVC */ = {
+			isa = PBXGroup;
+			children = (
+				2678EB132C42AAE500A83977 /* TranscriptResultViewController.swift */,
+			);
+			path = TranscriptResultVC;
+			sourceTree = "<group>";
+		};
+		2678EB152C42AC3800A83977 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2678EB162C42AC5300A83977 /* TranscriptResultViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		2688C5022C3936430037769A /* Delegates */ = {
@@ -131,6 +199,7 @@
 				26B7450F2C3827BE0007E8A7 /* Info.plist */,
 				26B745012C3827BB0007E8A7 /* AppDelegate.swift */,
 				26B745032C3827BB0007E8A7 /* SceneDelegate.swift */,
+				267476C92C4503AF001CC92C /* Extensions */,
 				26E099452C4007CC00BC16F3 /* Dependences */,
 				26E0994F2C400B5300BC16F3 /* Domain */,
 				2688C5112C39AC110037769A /* Pacakges */,
@@ -145,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				2688C5132C39AECD0037769A /* MainScreen */,
+				2678EB112C42AAAE00A83977 /* TranscriptResultScreen */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -262,6 +332,7 @@
 				26E099492C40083A00BC16F3 /* AudioExtraction */,
 				26E0994B2C40083A00BC16F3 /* AudioTranscript */,
 				26E0994D2C40083A00BC16F3 /* FileManger */,
+				2678EB192C42F8FD00A83977 /* UserDefaults */,
 			);
 			productName = Transcript;
 			productReference = 26B744FE2C3827BB0007E8A7 /* Transcript.app */;
@@ -293,6 +364,7 @@
 			mainGroup = 26B744F52C3827BB0007E8A7;
 			packageReferences = (
 				26E099422C4007C100BC16F3 /* XCRemoteSwiftPackageReference "Injection" */,
+				2678EB182C42F8FD00A83977 /* XCRemoteSwiftPackageReference "SwiftUserDefaults" */,
 			);
 			productRefGroup = 26B744FF2C3827BB0007E8A7 /* Products */;
 			projectDirPath = "";
@@ -322,10 +394,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				26E099512C400B7C00BC16F3 /* TranscriptGenerationLogic.swift in Sources */,
+				267476C82C45036B001CC92C /* DefaultKeys.swift in Sources */,
 				26E099602C41669300BC16F3 /* MainScreenViewModel.swift in Sources */,
+				2678EB172C42AC5300A83977 /* TranscriptResultViewModel.swift in Sources */,
 				26B745062C3827BB0007E8A7 /* MainViewController.swift in Sources */,
+				2678EB142C42AAE500A83977 /* TranscriptResultViewController.swift in Sources */,
 				26B745022C3827BB0007E8A7 /* AppDelegate.swift in Sources */,
 				26A282A82C38464E002CC931 /* RectangleView.swift in Sources */,
+				267476CC2C4503D4001CC92C /* LocaleLanguageExtension.swift in Sources */,
 				26B745042C3827BB0007E8A7 /* SceneDelegate.swift in Sources */,
 				26E099552C4151B400BC16F3 /* TranscriptGenerationLogicProtocol.swift in Sources */,
 				26E0995D2C4155B700BC16F3 /* MainViewLogicProtocol.swift in Sources */,
@@ -566,6 +642,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2678EB182C42F8FD00A83977 /* XCRemoteSwiftPackageReference "SwiftUserDefaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EngOmarElsayed/SwiftUserDefaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
 		26E099422C4007C100BC16F3 /* XCRemoteSwiftPackageReference "Injection" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/EngOmarElsayed/Injection.git";
@@ -577,6 +661,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2678EB192C42F8FD00A83977 /* UserDefaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2678EB182C42F8FD00A83977 /* XCRemoteSwiftPackageReference "SwiftUserDefaults" */;
+			productName = UserDefaults;
+		};
 		26E099432C4007C100BC16F3 /* Injection */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 26E099422C4007C100BC16F3 /* XCRemoteSwiftPackageReference "Injection" */;

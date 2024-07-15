@@ -11,4 +11,6 @@ import enum AudioTranscript.LocaleLanguage
 protocol TranscriptGenerationLogicProtocol {
   func extractAudioFromVideo() async throws
   func generateTranscript(for lang: LocaleLanguage) async throws -> String
+  func deleteAudioFileContent() throws
+  func videoUrl() -> URL
 }

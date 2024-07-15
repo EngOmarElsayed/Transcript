@@ -36,3 +36,14 @@ extension TranscriptGenerationLogic {
     return try await audioTranscript.generateTranscript(for: audioFile, lang: lang)
   }
 }
+
+//MARK: -  FileStorage Methods
+extension TranscriptGenerationLogic {
+  func deleteAudioFileContent() throws {
+    try fileStorage.deleteContent(from: audioFile)
+  }
+  
+  func videoUrl() -> URL {
+    return videoFile
+  }
+}

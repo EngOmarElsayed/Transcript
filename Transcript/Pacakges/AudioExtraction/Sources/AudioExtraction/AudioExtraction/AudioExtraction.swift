@@ -31,6 +31,7 @@ extension AudioExtraction {
     avAssetExportSession.outputURL = outputUrl
     
     await avAssetExportSession.export()
+    print(avAssetExportSession.status.rawValue)
   }
   
   private func checkCompatibility(for avAsset: AVAsset) async -> Bool {
