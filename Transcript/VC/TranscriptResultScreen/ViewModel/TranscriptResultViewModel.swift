@@ -35,12 +35,9 @@ extension TranscriptResultViewModel {
       transcriptResult = try await transcriptGenerationLogic.generateTranscript(for: lang)
       try await Task.sleep(for: .microseconds(10))
       
-      changeState(to: .Finished)
-      try await Task.sleep(for: .seconds(1))
-      toggleIsFinished()
-      deleteContent()
+      try await finishingTranscriptGen()
     } catch {
-      print(error.localizedDescription)
+      try? await handleGenerateTranscriptError(error as NSError)
     }
   }
   
@@ -53,6 +50,22 @@ extension TranscriptResultViewModel {
 
 //MARK: -  Private Methods
 extension TranscriptResultViewModel {
+  private func handleGenerateTranscriptError(_ error: NSError) async throws {
+    if error.code == 1110 {
+      transcriptResult = error.localizedDescription
+      try? await finishingTranscriptGen()
+    } else {
+      print(error.localizedDescription)
+    }
+  }
+  
+  private func finishingTranscriptGen() async throws {
+    changeState(to: .Finished)
+    try await Task.sleep(for: .seconds(1))
+    toggleIsFinished()
+    deleteContent()
+  }
+  
   private func deleteContent() {
     do {
       try transcriptGenerationLogic.deleteAudioFileContent()
@@ -72,28 +85,6 @@ extension TranscriptResultViewModel {
     DispatchQueue.main.async { [weak self] in
       guard let self else { return }
       self.isFinished.toggle()
-    }
-  }
-}
-
-enum TranscriptResultViewState: String {
-  case none = ""
-  case extractingAudio = "Extracting Audio from video"
-  case generatingTranscript = "Generating Transcript"
-  case Finished = "Finished"
-}
-
-extension TranscriptResultViewState {
-  var progress: Float {
-    switch self {
-    case .none:
-      return 0.0
-    case .extractingAudio:
-      return 0.5
-    case .generatingTranscript:
-      return 0.8
-    case .Finished:
-      return 1.0
     }
   }
 }
