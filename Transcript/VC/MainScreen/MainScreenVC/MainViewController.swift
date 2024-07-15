@@ -37,6 +37,10 @@ class MainViewController: UIViewController {
     super.viewDidLoad()
     setupVC()
   }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    viewModel.isVideoSelected = false
+  }
 }
 
 //MARK: -  Setup Methods
