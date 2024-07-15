@@ -10,6 +10,7 @@
 		267476C82C45036B001CC92C /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267476C72C45036B001CC92C /* DefaultKeys.swift */; };
 		267476CC2C4503D4001CC92C /* LocaleLanguageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267476CB2C4503D4001CC92C /* LocaleLanguageExtension.swift */; };
 		267476D02C4511DC001CC92C /* TranscriptResultViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267476CF2C4511DC001CC92C /* TranscriptResultViewState.swift */; };
+		267476D22C451326001CC92C /* addBottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267476D12C451326001CC92C /* addBottomLine.swift */; };
 		2678EB142C42AAE500A83977 /* TranscriptResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678EB132C42AAE500A83977 /* TranscriptResultViewController.swift */; };
 		2678EB172C42AC5300A83977 /* TranscriptResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678EB162C42AC5300A83977 /* TranscriptResultViewModel.swift */; };
 		2678EB1A2C42F8FD00A83977 /* UserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 2678EB192C42F8FD00A83977 /* UserDefaults */; };
@@ -38,6 +39,7 @@
 		267476C72C45036B001CC92C /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		267476CB2C4503D4001CC92C /* LocaleLanguageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleLanguageExtension.swift; sourceTree = "<group>"; };
 		267476CF2C4511DC001CC92C /* TranscriptResultViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptResultViewState.swift; sourceTree = "<group>"; };
+		267476D12C451326001CC92C /* addBottomLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addBottomLine.swift; sourceTree = "<group>"; };
 		2678EB132C42AAE500A83977 /* TranscriptResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptResultViewController.swift; sourceTree = "<group>"; };
 		2678EB162C42AC5300A83977 /* TranscriptResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptResultViewModel.swift; sourceTree = "<group>"; };
 		2688C5042C39366C0037769A /* PHPPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPPickerDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				26B7450C2C3827BD0007E8A7 /* LaunchScreen.storyboard */,
 				26B745072C3827BC0007E8A7 /* Main.storyboard */,
 				26A282A72C38464E002CC931 /* RectangleView.swift */,
+				267476D12C451326001CC92C /* addBottomLine.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				26E0995B2C41527300BC16F3 /* MainViewLogic.swift in Sources */,
 				26E099472C4007DF00BC16F3 /* Dependences.swift in Sources */,
 				2688C5052C39366C0037769A /* PHPPickerDelegate.swift in Sources */,
+				267476D22C451326001CC92C /* addBottomLine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

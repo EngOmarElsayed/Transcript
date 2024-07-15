@@ -20,15 +20,29 @@ class TranscriptResultViewController: UIViewController {
   @IBOutlet var loadingLabel: UILabel!
   @IBOutlet var loadingEffect: UIVisualEffectView!
   
+  @IBOutlet var doneButton: UIBarButtonItem!
+  @IBOutlet var pauseButton: UIButton!
   @IBOutlet var videoPlayButton: UIButton!
   @IBOutlet var videoPlayerView: UIView!
   @IBOutlet var transcriptResultView: UITextView!
   
-  @IBAction func videoPlayerButtonAction(_ sender: UIButton) {
-    videoPlayer?.play()
+  @IBAction func pauseButton(_ sender: UIButton) {
+    videoPlayer?.pause()
+    videoPlayButton.isHidden = false
     sender.isHidden = true
   }
   
+  @IBAction func videoPlayerButtonAction(_ sender: UIButton) {
+    videoPlayer?.play()
+    pauseButton.isHidden = false
+    sender.isHidden = true
+  }
+  
+  @IBAction func doneButton(_ sender: UIBarButtonItem) {
+    self.navigationController?.popToRootViewController(animated: true)
+  }
+  
+  //MARK: -  VC Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setupVC()
@@ -40,7 +54,7 @@ class TranscriptResultViewController: UIViewController {
     }
   }
   
-  override func viewWillDisappear(_ animated: Bool) {
+  override func viewDidDisappear(_ animated: Bool) {
     viewModel.rest()
   }
 }
@@ -50,6 +64,8 @@ extension TranscriptResultViewController {
   private func setupVC() {
     setupVideoPlayer()
     listenToPublishers()
+    videoPlayerView.addBottomLine(with: .imageBlack, and: 1.0)
+    navigationItem.setHidesBackButton(true, animated: true)
   }
   
   private func listenToPublishers() {
@@ -62,7 +78,7 @@ extension TranscriptResultViewController {
     viewModel.$isFinished.sink { [weak self] isFinished in
       guard let self else { return }
       loadingEffect.isHidden = isFinished
-      navigationItem.setHidesBackButton(!isFinished, animated: true)
+      doneButton.isHidden = !isFinished
     }.store(in: &cancellable)
     
     viewModel.$transcriptResult.sink { [weak self] transcriptResult in

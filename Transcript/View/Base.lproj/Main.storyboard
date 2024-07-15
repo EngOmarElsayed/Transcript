@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -180,8 +179,16 @@
                                     <action selector="videoPlayerButtonAction:" destination="2ht-vu-BYI" eventType="touchUpInside" id="pFE-3J-KcQ"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6l-FS-NiY">
+                                <rect key="frame" x="0.0" y="91.000000000000028" width="390" height="337.66666666666674"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="pauseButton:" destination="2ht-vu-BYI" eventType="touchUpInside" id="BMS-7c-uj8"/>
+                                </connections>
+                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n96-jd-LgY">
-                                <rect key="frame" x="16" y="438.66666666666674" width="358" height="405.33333333333326"/>
+                                <rect key="frame" x="16" y="433.66666666666674" width="374" height="410.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -235,22 +242,34 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TXg-SE-KD4" firstAttribute="trailing" secondItem="cIV-BV-7AE" secondAttribute="trailing" id="9uV-1X-qPQ"/>
-                            <constraint firstItem="cIV-BV-7AE" firstAttribute="trailing" secondItem="n96-jd-LgY" secondAttribute="trailing" constant="16" id="LKi-Sw-b1W"/>
+                            <constraint firstItem="M6l-FS-NiY" firstAttribute="height" secondItem="TXg-SE-KD4" secondAttribute="height" id="CIj-9F-iYh"/>
+                            <constraint firstItem="cIV-BV-7AE" firstAttribute="trailing" secondItem="n96-jd-LgY" secondAttribute="trailing" id="LKi-Sw-b1W"/>
                             <constraint firstItem="n96-jd-LgY" firstAttribute="leading" secondItem="cIV-BV-7AE" secondAttribute="leading" constant="16" id="LRU-l1-CGG"/>
+                            <constraint firstItem="M6l-FS-NiY" firstAttribute="centerY" secondItem="TXg-SE-KD4" secondAttribute="centerY" id="NJo-jJ-Ebe"/>
                             <constraint firstItem="8MC-YT-Ba0" firstAttribute="centerX" secondItem="TXg-SE-KD4" secondAttribute="centerX" id="QsD-5Q-P9z"/>
                             <constraint firstItem="TXg-SE-KD4" firstAttribute="height" secondItem="GKO-5N-Kjd" secondAttribute="height" multiplier="0.4" id="Ry7-GU-KUZ"/>
                             <constraint firstItem="TXg-SE-KD4" firstAttribute="top" secondItem="cIV-BV-7AE" secondAttribute="top" id="T5o-sn-CTI"/>
-                            <constraint firstItem="n96-jd-LgY" firstAttribute="top" secondItem="TXg-SE-KD4" secondAttribute="bottom" constant="10" id="a4T-DJ-ipt"/>
+                            <constraint firstItem="n96-jd-LgY" firstAttribute="top" secondItem="TXg-SE-KD4" secondAttribute="bottom" constant="5" id="a4T-DJ-ipt"/>
                             <constraint firstItem="TXg-SE-KD4" firstAttribute="leading" secondItem="cIV-BV-7AE" secondAttribute="leading" id="bMu-w4-WEH"/>
                             <constraint firstAttribute="bottom" secondItem="n96-jd-LgY" secondAttribute="bottom" id="dBU-eH-fPD"/>
+                            <constraint firstItem="M6l-FS-NiY" firstAttribute="centerX" secondItem="TXg-SE-KD4" secondAttribute="centerX" id="dBr-JL-WXQ"/>
+                            <constraint firstItem="M6l-FS-NiY" firstAttribute="width" secondItem="TXg-SE-KD4" secondAttribute="width" id="mMW-IT-CwI"/>
                             <constraint firstItem="8MC-YT-Ba0" firstAttribute="centerY" secondItem="TXg-SE-KD4" secondAttribute="centerY" id="wCo-xo-Jjh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Ohh-eR-LOW"/>
+                    <navigationItem key="navigationItem" id="Ohh-eR-LOW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" hidden="YES" id="DIi-N4-zqB">
+                            <connections>
+                                <action selector="doneButton:" destination="2ht-vu-BYI" id="bQg-2m-mFW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="DIi-N4-zqB" id="Brm-cK-euJ"/>
                         <outlet property="loadingEffect" destination="3tn-OB-Veo" id="IOf-dy-gyo"/>
                         <outlet property="loadingLabel" destination="RjZ-F0-Ddl" id="G8N-zr-XTh"/>
                         <outlet property="loadingProgress" destination="zHp-cH-xvh" id="vI0-vd-8fy"/>
+                        <outlet property="pauseButton" destination="M6l-FS-NiY" id="0g0-We-T8B"/>
                         <outlet property="transcriptResultView" destination="n96-jd-LgY" id="2gg-8p-Sc2"/>
                         <outlet property="videoPlayButton" destination="8MC-YT-Ba0" id="U12-tp-ZyL"/>
                         <outlet property="videoPlayerView" destination="TXg-SE-KD4" id="0aa-Dd-bUS"/>
