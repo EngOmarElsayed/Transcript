@@ -49,6 +49,7 @@ extension AudioTranscript {
   private func createRecognitionRequest(for audioUrl: URL, and sF: SFSpeechRecognizer) async throws -> String {
     let request = SFSpeechURLRecognitionRequest(url: audioUrl)
     request.shouldReportPartialResults = false
+    request.addsPunctuation = true
     
     return try await recognitionTask(for: request, and: sF)
   }
