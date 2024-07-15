@@ -15,10 +15,17 @@ class MainViewController: UIViewController {
   private var cancellable = Set<AnyCancellable>()
   
   //MARK: -  Outlets
+  @IBOutlet var undoButton: UIBarButtonItem!
   @IBOutlet var blurEffect: UIVisualEffectView!
+  @IBOutlet var imageView: UIImageView!
   @IBOutlet var uploadedLabel: UILabel!
   @IBOutlet var generateButton: UIButton!
   @IBOutlet var popButton: UIButton!
+  
+  
+  @IBAction func undoButtonAction(_ sender: UIBarButtonItem) {
+    viewModel.isVideoSelected = false
+  }
   
   @IBAction func rectangleTapAction(_ sender: UITapGestureRecognizer) {
     let picker = setupPickerView()
@@ -56,6 +63,8 @@ extension MainViewController {
     viewModel.$isVideoSelected.sink { [weak self] isVideoSelected in
       guard let self else { return }
       uploadedLabel.text = isVideoSelected ? "File is successfully uploaded ✅": "Tap to uploaded your video"
+      undoButton.isHidden = !isVideoSelected
+      setupImageView(isVideoSelected)
     }.store(in: &cancellable)
   }
   
@@ -88,6 +97,22 @@ extension MainViewController {
     picker.delegate = phpPicker
     
     return picker
+  }
+  
+  private func setupImageView(_ isVideoSelected: Bool) {
+    var colors: [UIColor] = []
+    var imageString = ""
+    
+    if isVideoSelected {
+      colors = [.systemGreen]
+      imageString = "photo.badge.checkmark"
+    } else {
+      colors = [.systemGreen, .imageBlack]
+      imageString = "photo.badge.arrow.down"
+    }
+    
+    let symbolConfiguration = UIImage.SymbolConfiguration(paletteColors: colors)
+    imageView.image = UIImage(systemName: imageString, withConfiguration: symbolConfiguration)
   }
 }
 

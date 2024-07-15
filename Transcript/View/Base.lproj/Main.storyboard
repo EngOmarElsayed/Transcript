@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,8 +36,8 @@
                                                         <imageReference key="image" image="photo.badge.arrow.down" catalog="system" symbolScale="default" renderingMode="hierarchical">
                                                             <hierarchicalColors>
                                                                 <color systemColor="systemGreenColor"/>
-                                                                <color name="BlackColor"/>
-                                                                <color name="BlackColor"/>
+                                                                <color name="imageBlackColor"/>
+                                                                <color name="imageBlackColor"/>
                                                             </hierarchicalColors>
                                                         </imageReference>
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="regular"/>
@@ -134,11 +135,19 @@
                             <constraint firstAttribute="bottom" secondItem="4Wf-vt-i5Z" secondAttribute="bottom" id="zig-Ci-aSb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Genrate Transcript" id="Xky-Y5-NXv"/>
+                    <navigationItem key="navigationItem" title="Genrate Transcript" id="Xky-Y5-NXv">
+                        <barButtonItem key="rightBarButtonItem" title="Undo" image="arrow.uturn.backward" catalog="system" hidden="YES" id="UOc-9A-ujL">
+                            <connections>
+                                <action selector="undoButtonAction:" destination="BYZ-38-t0r" id="6np-5A-xxB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="blurEffect" destination="4Wf-vt-i5Z" id="Q2M-FB-ET3"/>
                         <outlet property="generateButton" destination="V1r-Sq-YCa" id="yeI-1z-fKY"/>
+                        <outlet property="imageView" destination="ywF-ai-h6a" id="M5G-mr-Le1"/>
                         <outlet property="popButton" destination="d6P-uM-1wg" id="FuG-Tn-2N1"/>
+                        <outlet property="undoButton" destination="UOc-9A-ujL" id="6r1-lM-5a0"/>
                         <outlet property="uploadedLabel" destination="rj7-Uj-rHz" id="Xht-Fn-VIz"/>
                     </connections>
                 </viewController>
@@ -271,9 +280,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.uturn.backward" catalog="system" width="128" height="113"/>
         <image name="photo.badge.arrow.down" catalog="system" width="128" height="97"/>
         <image name="play.fill" catalog="system" width="117" height="128"/>
-        <namedColor name="BlackColor">
+        <namedColor name="imageBlackColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
