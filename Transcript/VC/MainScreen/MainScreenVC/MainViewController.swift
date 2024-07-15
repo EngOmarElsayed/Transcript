@@ -41,37 +41,30 @@ class MainViewController: UIViewController {
 
 //MARK: -  Setup Methods
 extension MainViewController {
-  
   private func setupVC() {
-    setupViewControllerVar()
+    phpPicker = PHPPickerDelegate(pickerCompletion: viewModel.convertItemToVideo(_:))
     setupPopUpButton()
     subscribeToPublishers()
     viewModel.requestAccess()
   }
-  
+
   private func subscribeToPublishers() {
     viewModel.$isLoading.sink { [weak self] isLoading in
       guard let self else { return }
-      blurEffect.isHidden = !isLoading
+      changeBluerEffectVisibility(isLoading)
     }.store(in: &cancellable)
     
     viewModel.$isReadyToSubmit.sink { [weak self] isReadyToSubmit in
       guard let self else { return }
-      generateButton.isEnabled = isReadyToSubmit
+      enableGenButton(isReadyToSubmit)
     }.store(in: &cancellable)
     
     viewModel.$isVideoSelected.sink { [weak self] isVideoSelected in
       guard let self else { return }
-      uploadedLabel.text = isVideoSelected ? "File is successfully uploaded ✅": "Tap to uploaded your video"
-      undoButton.isHidden = !isVideoSelected
-      setupImageView(isVideoSelected)
+      updateLabelImageView(isVideoSelected)
     }.store(in: &cancellable)
   }
-  
-  private func setupViewControllerVar() {
-    phpPicker = PHPPickerDelegate(pickerCompletion: viewModel.convertItemToVideo(_:))
-  }
-  
+    
   private func setupPopUpButton() {
     var arrayOfActions = [UIAction]()
     for lang in viewModel.langArray {
@@ -97,6 +90,23 @@ extension MainViewController {
     picker.delegate = phpPicker
     
     return picker
+  }
+}
+
+//MARK: -  UI Changes Methods
+extension MainViewController {
+  private func enableGenButton(_ isReadyToSubmit: Bool) {
+    generateButton.isEnabled = isReadyToSubmit
+  }
+  
+  private func changeBluerEffectVisibility(_ isLoading: Bool) {
+    blurEffect.isHidden = !isLoading
+  }
+  
+  private func updateLabelImageView(_ isVideoSelected: Bool) {
+    uploadedLabel.text = isVideoSelected ? "File is successfully uploaded ✅": "Tap to uploaded your video"
+    undoButton.isHidden = !isVideoSelected
+    setupImageView(isVideoSelected)
   }
   
   private func setupImageView(_ isVideoSelected: Bool) {
